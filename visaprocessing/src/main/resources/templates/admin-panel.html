@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .button-container {
+            margin: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Admin Panel</h1>
+
+    <div class="button-container">
+        <button onclick="redirectTo('view-users')">View Registered Users</button>
+        <button onclick="redirectTo('view-pending')">View Pending </button>
+        <button onclick="redirectTo('view-approved')">View Approved</button>
+        <button onclick="redirectTo('view-rejected')">View Rejected</button>
+        <button onclick="redirectTo('adminlogout')">Logout</button>
+		
+    </div>
+
+    <script>
+        function redirectTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

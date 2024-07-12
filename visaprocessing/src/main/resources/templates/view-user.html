@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Registered Users</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .button-container {
+            margin: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+		
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>View Registered Users</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>Email</th> 
+                <th>Mobile</th>
+                <th>Address</th>
+                <th>Zipcode</th>
+                <th>Nationality</th>  
+                <th>Father's Name</th>
+                <th>Mother's Name</th>
+                
+                <!-- Add more columns for user data as needed -->
+            </tr>
+        </thead>
+       
+            <!-- Loop through your user data and populate the table -->
+           <th:block th:each="adminUser : ${users}"
+            <tr>
+                <td th:text="${adminUser.username}"></td>
+              <td th:text="${adminUser.fname}"></td>
+                <td th:text="${adminUser.mname}"></td> 
+                <td th:text="${adminUser.lname}"></td>
+           <td th:text="${adminUser.email}"></td>
+              <td th:text="${adminUser.mobile}"></td>
+                   <td th:text="${adminUser.address}"></td>
+             <td th:text="${adminUser.zipcode}"></td>
+               <td th:text="${adminUser.nationality}"></td> 
+              <td th:text="${adminUser.faname}"></td>
+               <td th:text="${adminUser.moname}"></td>
+         
+            </tr>
+         </th:block>
+          
+        </tbody>
+    </table>
+
+    <div class="button-container">
+        <button onclick="redirectTo('admin-panel')">Back to Admin Panel</button>
+    </div>
+
+    <script>
+        function redirectTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

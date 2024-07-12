@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visa Processing System- Login</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+        #navbar
+        {
+            position: fixed;
+            z-index: 1000;
+            opacity:100%;
+            width: 100%;
+            display: flex;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            padding: 20px;
+        }
+        #nav1{
+            width: 80%;
+            font-size: 30px;
+            padding-left: 50px;
+        }
+        #nav2{
+            width: 50%;
+            display: flex;
+            justify-content:  space-evenly;
+        }
+        .nav-link
+        {
+            color:rgb(127, 125, 125);
+            text-decoration: none;
+            text-transform: capitalize;
+            font-weight: bold;
+            font-family: monospace;
+            font-size: 18px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+                }
+        .login-container {
+            max-width: 400px;
+           padding: 100px;
+         
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #087fff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div id="nav1"><b>REGISTER</b></div>
+        <div id="nav2">
+            <a class="nav-link" href="home.html">home</a>
+            <a class="nav-link" href="home.html#about">about</a>
+            <a class="nav-link" href="home.html#contact">contact</a>
+            <a class="nav-link" href="login.html">login</a>
+        </div>
+    </div>
+  <div style="display: flex;justify-content: center;">
+    <div class="login-container">
+        <h2>visa processing system</h2>
+        <form th:action="@{/saveuser}" method="post">
+            <div class="input-group">
+             <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" required>
+            </div> 
+            <div class="input-group">
+             <label for="mname">Middle Name</label>
+                <input type="text" id="mname" name="mname" required>
+            </div> 
+            <div class="input-group">
+             <label for="fname">Last Name</label>
+                <input type="text" id="lname" name="lname" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                   <input type="email" id="email" name="email" required>
+               </div>
+               <div class="input-group">
+                <label for="mobile">Mobile</label>
+                <input type="number" id="mobile" name="mobile" required>
+            </div>
+           
+                <div class="input-group">
+             <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group">
+                <label for="passport_number">Passport Number</label>
+                <input type="number" id="passport_number" name="passport_number" required>
+            </div>
+            <div class="input-group">
+                <label for="nationality">Nationality</label>
+                <input type="text" id="nationality" name="nationality" required>
+            </div>
+           <div class="input-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" required></textarea>
+            </div>
+             <div class="input-group">
+                <label for="zipcode">Zipcode</label>
+                <input type="text" id="zipcode" name="zipcode" required>
+            </div>
+            <div class="input-group">
+                <label for="faname">Father's Name</label>
+                <input type="text" id="faname" name="faname" required>
+            </div>
+             <div class="input-group">
+                <label for="fnationality">Father's Nationality</label>
+                <input type="text" id="fnationality" name="fnationality" required>
+            </div>
+             <div class="input-group">
+                <label for="moname">Mother's Name</label>
+                <input type="text" id="moname" name="moname" required>
+            </div>
+             <div class="input-group">
+                <label for="mnationality">Mother's Nationality</label>
+                <input type="text" id="mnationality" name="mnationality" required>
+            </div>
+             <div class="input-group">
+                <label for="status">Marital Status</label>
+                <select id="status" name="status" required>
+                  <option value="">Select Marital Status</option>
+                  <option value="married">Married</option>
+                  <option value="unmarried">Unmarried</option>
+                  </select>
+            </div>
+            
+            <button class="Register" type="submit">Register</button>
+        </form>
+    </div>
+
+  </div>
+</body>
+</html>

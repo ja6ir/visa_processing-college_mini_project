@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Registered Users</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .button-container {
+            margin: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+		
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>View Pending Application</h1>
+
+    <table>
+        <thead>
+            <tr>
+				 <th>Appl.Id</th>
+                <th>Username</th>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>Visiting Country</th> 
+                <th>Visa Type</th>
+                <th>Duration Required</th>
+                <th>Current Status</th>
+                 <th>Action</th> 
+                
+                <!-- Add more columns for user data as needed -->
+            </tr>
+        </thead>
+       
+            <!-- Loop through your user data and populate the table -->
+           <tr th:each="apply, applyIndex : ${pendingApplications}">
+			  <td th:text="${apply.id}"></td>  
+            <td th:text="${apply.username}"></td>
+            <td th:text="${registrationDataList[applyIndex.index].fname}"></td>
+            <td th:text="${registrationDataList[applyIndex.index].mname}"></td>
+            <td th:text="${registrationDataList[applyIndex.index].lname}"></td>
+       <td th:text="${apply.country}"></td>
+            <td th:text="${apply.visa_type}"></td>
+             <td th:text="${apply.duration}"></td> 
+             <td th:text="${apply.visastatus}"></td>
+      <td>
+             <a th:href="@{'/approveVisa?username=' + ${apply.username} }"><button>Approve</button> </a>
+             <a th:href="@{'/rejectVisa?username=' + ${apply.username} }"><button>Reject</button> </a>
+
+</td>
+
+             
+         
+            </tr>
+        
+          
+         
+    </table>
+
+    <div class="button-container">
+        <button onclick="redirectTo('admin-panel')">Back to Admin Panel</button>
+    </div>
+
+    <script>
+        function redirectTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

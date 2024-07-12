@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Approved Visa Applications</title>
+</head>
+<body>
+    <h1>Visa Status - Approved Applications</h1>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Country</th>
+            <th>Visa Status</th>
+             <th>Applied Date</th>
+              <th>Visa Type</th>
+               <th>Duration(Months)</th>
+        </tr>
+        <th:block th:each="visa : ${approvedVisas}">
+            <tr>
+                <td th:text="${visa.id}"></td>
+              <td th:text="${visa.country}"></td>
+                <td th:text="${visa.visastatus}"></td> 
+                <td th:text="${visa.date}"></td>
+                <td th:text="${visa.visa_type}"></td>
+               <td th:text="${visa.duration}"></td>
+            </tr>
+        </th:block>
+    </table>
+</body>
+</html>
